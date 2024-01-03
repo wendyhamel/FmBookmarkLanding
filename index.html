@@ -20,6 +20,9 @@
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="./style/safari-reset.css">
+
 </head>
 <body class="flex flex-col min-h-screen antialiased md:font-xl">
   <header class="flex justify-between items-center px-6 py-8">
@@ -71,10 +74,10 @@
                                   </div>
                                   <div class="relative mt-6 flex-1 grid px-6">
                                       <ol class="divide-y divide-gray-blue/20 border-t border-gray-blue/20">
-                                          <li class="py-3 text-center "><a href="#" class="uppercase tracking-wider active:text-red transition ease-out duration-300">Features</a></li>
-                                          <li class="py-3 text-center "><a href="#" class="uppercase tracking-wider active:text-red transition ease-out duration-300">Pricing</a></li>
-                                          <li class="py-3 text-center "><a href="#" class="uppercase tracking-wider active:text-red transition ease-out duration-300">Contact</a></li>
-                                          <li class="py-6 text-center "><a href="#" class="block border border-white rounded py-2 font-medium uppercase tracking-wider active:text-red transition ease-out duration-300">Login</a></li>
+                                          <li class="py-3 text-center"><a href="#" class="uppercase tracking-wider active:text-red transition ease-out duration-300">Features</a></li>
+                                          <li class="py-3 text-center"><a href="#" class="uppercase tracking-wider active:text-red transition ease-out duration-300">Pricing</a></li>
+                                          <li class="py-3 text-center"><a href="#" class="uppercase tracking-wider active:text-red transition ease-out duration-300">Contact</a></li>
+                                          <li class="py-6 text-center"><a href="#" class="block border border-white rounded py-2 font-medium uppercase tracking-wider active:text-red transition ease-out duration-300">Login</a></li>
                                       </ol>
                                       <ul class="self-end flex justify-center items-center gap-8 p-6">
                                           <li class="w-6">
@@ -124,11 +127,8 @@
               </div>
           </div>
       </section>
-      <section
-          x-data="{tab: 'simple'}"
-          class="px-6"
-      >
-          <div>
+      <section x-data="{tab: 'simple'}">
+          <div class="px-4 pb-12 space-y-3">
               <h3 class="text-xl text-center font-medium md:text-start">Features</h3>
 
               <p class="text-gray-blue text-center max-w-prose">
@@ -137,32 +137,33 @@
               </p>
           </div>
 
-          <ol class="border border-x-transparent border-y-gray-blue/20 divide-y divide-gray-blue/20">
-              <li>
-                  <button type="button" x-on:click="tab = 'simple'" class="transition ease-out duration-300">
+          <ol class="mx-6 border border-x-transparent border-y-gray-blue/20 divide-y divide-gray-blue/20 mb-12">
+              <li class="text-center">
+                  <button type="button" x-on:click="tab = 'simple'" :class="tab == 'simple' ? 'before:border-red text-dark-blue' : 'text-gray-blue'"  class="before:block before:absolute before:inset-x-2 before:bottom-0 before:border-b-[3px] before:border-transparent relative inline-block py-3 transition ease-out duration-300">
                       Simple Bookmarking
                   </button>
               </li>
-              <li>
-                  <button type="button" x-on:click="tab = 'search'" class="transition ease-out duration-300">
+              <li class="text-center">
+                  <button type="button" x-on:click="tab = 'search'" :class="tab == 'search' ? 'before:border-red text-dark-blue' : 'text-gray-blue'" class="before:block before:absolute before:inset-x-2 before:bottom-0 before:border-b-[3px] before:border-transparent relative inline-block py-3 transition ease-out duration-300">
                       Speedy Searching
                   </button>
               </li>
-              <li>
-                  <button type="button" x-on:click="tab = 'share'" class="transition ease-out duration-300">
+              <li class="text-center">
+                  <button type="button" x-on:click="tab = 'share'" :class=" tab == 'share' ? 'before:border-red text-dark-blue' : 'text-gray-blue'" class="before:block before:absolute before:inset-x-2 before:bottom-0 before:border-b-[3px] before:border-transparent relative inline-block py-3 transition ease-out duration-300">
                       Easy Sharing
                   </button>
               </li>
           </ol>
 
           <div x-show="tab == 'simple'">
-              <div>
-                  <img src="images/illustration-features-tab-1.svg" alt="">
+              <div class="pb-8 relative md:col-start-2">
+                  <div class="absolute left-0 bottom-0 bg-blue rounded-r-full h-3/4 w-3/4"></div>
+                  <img class="px-6 relative" src="images/illustration-features-tab-1.svg" alt="">
               </div>
-              <div>
-                  <h3 class="text-xl text-center font-medium md:text-start">Bookmark in one click</h3>
+              <div class="px-4 py-12 space-y-3 text-center md:text-start">
+                  <h3 class="text-xl font-medium">Bookmark in one click</h3>
 
-                  <p class="text-gray-blue text-center">
+                  <p class="text-gray-blue pb-3">
                       Organize your bookmarks however you like. Our simple drag-and-drop interface
                       gives you complete control over how you manage your favourite sites.
                   </p>
@@ -173,13 +174,14 @@
           </div>
 
           <div x-show="tab == 'search'">
-              <div>
-                  <img src="images/illustration-features-tab-2.svg" alt="">
+              <div class="pb-8 relative md:col-start-2">
+                  <div class="absolute left-0 bottom-0 bg-blue rounded-r-full h-3/4 w-3/4"></div>
+                  <img class="px-6 relative" src="images/illustration-features-tab-2.svg" alt="">
               </div>
-              <div>
-                  <h3 class="text-xl text-center font-medium md:text-start">Intelligent search</h3>
+              <div class="px-4 py-12 space-y-3 text-center md:text-start">
+                  <h3 class="text-xl font-medium">Intelligent search</h3>
 
-                  <p class="text-gray-blue text-center">
+                  <p class="text-gray-blue pb-3">
                       Our powerful search feature will help you find saved sites in no time at all.
                       No need to trawl through all of your bookmarks.
                   </p>
@@ -189,13 +191,14 @@
           </div>
 
           <div x-show="tab == 'share'">
-              <div>
-                  <img src="images/illustration-features-tab-3.svg" alt="">
+              <div class="pb-8 relative md:col-start-2">
+                  <div class="absolute left-0 bottom-0 bg-blue rounded-r-full h-3/4 w-3/4"></div>
+                  <img class="px-6 relative" src="images/illustration-features-tab-3.svg" alt="">
               </div>
-              <div>
-                  <h3 class="text-xl text-center font-medium md:text-start">Share your bookmarks</h3>
+              <div class="px-4 py-12 space-y-3 text-center md:text-start">
+                  <h3 class="text-xl font-medium">Share your bookmarks</h3>
 
-                  <p class="text-gray-blue text-center">
+                  <p class="text-gray-blue pb-3">
                       Easily share your bookmarks and collections with others. Create a shareable
                       link that you can send at the click of a button.
                   </p>
@@ -208,134 +211,175 @@
 
       <section>
 
-          <h3 class="text-xl text-center font-medium md:text-start">Download the extension</h3>
+          <h3 class="px-6 pb-3 text-xl text-center font-medium md:text-start">Download the extension</h3>
 
-          <p class="text-gray-blue text-center">
+          <p class="px-6 text-gray-blue text-center">
               We’ve got more browsers in the pipeline. Please do let us know if you’ve
               got a favourite you’d like us to prioritize.
           </p>
-
-          <img src="images/logo-chrome.svg" alt="">
-          <h4>Add to Chrome</h4>
-          <p>Minimum version 62</p>
-          <button type="button" class="bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">Add & Install Extension</button>
-
-          <img src="images/logo-firefox.svg" alt="">
-          <h4>Add to Firefox</h4>
-          <p>Minimum version 55</p>
-          <button type="button" class="bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">Add & Install Extension</button>
-
-          <img src="images/logo-opera.svg" alt="">
-          <h4>Add to Opera</h4>
-          <p>Minimum version 46</p>
-          <button type="button" class="bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">Add & Install Extension</button>
+          <div class="p-6 grid gap-6">
+              <div class="relative shadow-lg rounded-xl">
+                  <div class="relative flex flex-col">
+                      <div class="grid place-items-center p-4">
+                          <img class="mb-4" src="images/logo-chrome.svg" alt="Chrome logo">
+                          <h4 class="text-lg font-medium">Add to Chrome</h4>
+                          <p class="text-xs text-gray-blue mb-6">Minimum version 62</p>
+                      </div>
+                      <button type="button" class="m-6 bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">Add & Install Extension</button>
+                  </div>
+                  <img class="absolute inset-x-0 bottom-24 object-cover w-full" src="images/bg-dots.svg" alt="dotted line decoration">
+              </div>
+              <div class="relative shadow-lg rounded-xl">
+                  <div class="relative flex flex-col">
+                      <div class="grid place-items-center p-4">
+                          <img class="mb-4" src="images/logo-firefox.svg" alt="Firefox logo">
+                          <h4 class="text-lg font-medium">Add to Firefox</h4>
+                          <p class="text-xs text-gray-blue mb-6">Minimum version 55</p>
+                      </div>
+                      <button type="button" class="m-6 bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">Add & Install Extension</button>
+                  </div>
+                  <img class="absolute inset-x-0 bottom-24 object-cover w-full" src="images/bg-dots.svg" alt="dotted line decoration">
+              </div>
+              <div class="relative shadow-lg rounded-xl">
+                  <div class="relative flex flex-col">
+                      <div class="grid place-items-center p-4">
+                          <img class="mb-4" src="images/logo-opera.svg" alt="Opera logo">
+                          <h4 class="text-lg font-medium">Add to Opera</h4>
+                          <p class="text-xs text-gray-blue mb-6">Minimum version 46</p>
+                      </div>
+                      <button type="button" class="m-6 bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">Add & Install Extension</button>
+                  </div>
+                  <img class="absolute inset-x-0 bottom-24 object-cover w-full" src="images/bg-dots.svg" alt="dotted line decoration">
+              </div>
+          </div>
       </section>
 
-      <section>
-          <h3 class="text-xl text-center font-medium md:text-start">
+      <section class="px-4 pb-12">
+          <h3 class="pb-3 text-xl text-center font-medium md:text-start">
               Frequently Asked Questions
           </h3>
 
-          <p class="text-gray-blue text-center">
+          <p class="ext-gray-blue text-center">
               Here are some of our FAQs. If you have any other questions you’d like
               answered please feel free to email us.
           </p>
 
-          <details>
-              <summary>
-                  <!-- Question 1 -->
-                  What is Bookmark?
-              </summary>
-              <div>
-                  <!-- Answer 1 -->
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
-                  justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
-              </div>
-          </details>
+          <ul class="py-12">
+              <li>
+                  <details class="border-b border-gray-blue/20 group">
+                      <summary class="list-none flex justify-between items-center gap-2 py-3">
+                          <h4>What is Bookmark?</h4>
+                          <span class="transition ease-out duration-300 text-blue group-open:-rotate-180 group-open:text-red">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="currentColor" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                      </span>
+                      </summary>
+                      <p class="text-gray-blue pt-3 pb-6">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+                          justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+                      </p>
+                  </details>
+              </li>
 
-          <details>
-              <summary>
-                  <!-- Question 2 -->
-                  How can I request a new browser?
-              </summary>
-              <div>
-                  <!-- Answer 2 -->
-                  Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
-                  Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
-                  ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
-                  Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-              </div>
-          </details>
+              <li>
+                  <details class="border-b border-gray-blue/20 group">
+                      <summary class="list-none flex justify-between items-center gap-2 py-3">
+                          <h4>How can I request a new browser?</h4>
+                          <span class="transition ease-out duration-300 text-blue group-open:-rotate-180 group-open:text-red">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="currentColor" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                      </span>
+                      </summary>
+                      <p class="text-gray-blue pt-3 pb-6">
+                          Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+                          Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+                          ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+                          Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+                      </p>
+                  </details>
+              </li>
 
-          <details>
-              <summary>
-                  <!-- Question 3 -->
-                  Is there a mobile app?
-              </summary>
-              <div>
-                  <!-- Answer 3 -->
-                  Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
-                  urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
-                  sollicitudin ex et ultricies bibendum.
-              </div>
-          </details>
+              <li>
+                  <details class="border-b border-gray-blue/20 group">
+                      <summary class="list-none flex justify-between items-center gap-2 py-3">
+                          <h4>Is there a mobile app?</h4>
+                          <span class="transition ease-out duration-300 text-blue group-open:-rotate-180 group-open:text-red">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="currentColor" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                      </span>
+                      </summary>
+                      <p class="text-gray-blue pt-3 pb-6">
+                          Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
+                          urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+                          sollicitudin ex et ultricies bibendum.
+                      </p>
+                  </details>
+              </li>
 
-          <details>
-          <!-- Question 4 -->
-              <summary>
-                  What about other Chromium browsers?
-              </summary>
-              <div>
-                  <!-- Answer 4 -->
-                  Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
-                  vitae neque eget nisl gravida pellentesque non ut velit.
-              </div>
-          </details>
+              <li>
+                  <details class="border-b border-gray-blue/20 group">
+                      <summary class="list-none flex justify-between items-center gap-2 py-3">
+                          <h4>What about other Chromium browsers?</h4>
+                          <span class="transition ease-out duration-300 text-blue group-open:-rotate-180 group-open:text-red">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="currentColor" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                      </span>
+                      </summary>
+                      <p class="text-gray-blue pt-3 pb-6">
+                          Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+                          vitae neque eget nisl gravida pellentesque non ut velit.
+                      </p>
+                  </details>
+              </li>
+          </ul>
 
-      </section>
-      <section>
-          <button type="button" class="bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">More Info</button>
+          <div class="text-center">
+              <button type="button" class="bg-blue text-white text-sm rounded px-4 py-3 transition ease-out duration-300">More Info</button>
+          </div>
       </section>
   </main>
   <footer>
-      <section class="bg-blue text-white">
+      <section class="bg-blue text-white px-6 py-12">
 
-          <div>
-            <span class="uppercase font-sm">35,000+ already joined</span>
-            <span>Stay up-to-date with what we’re doing</span>
+          <div class="text-center">
+            <p class="uppercase text-sm tracking-[0.2em]">35,000+ already joined</p>
+            <p class="text-xl font-medium">Stay up-to-date with what we’re doing</p>
           </div>
-          <form  x-data="signup()">
 
-              <input
-                      class="placeholder:text-gray-blue"
-                      type="text"
-                      x-model="email"
-                      placeholder="enter your email address"
-                      required
-              >
-              <span class="italic bg-red" x-text="validation.email.message"></span>
+          <form  x-data="signup()" class="flex flex-wrap gap-3">
 
-              <button x-on:click="submit()" type="button" class="bg-red transition ease-out duration-300">
+              <div class="grow rounded" :class="{'bg-red' : validation.email.invalid}">
+                  <label class="block rounded bg-white border-2 border-transparent text-dark-blue p-3 overflow-hidden flex items-center gap-2" :class="{'border-red' : validation.email.invalid}">
+                      <span class="sr-only">email</span>
+                      <input
+                              class="grow placeholder:text-gray-blue bg-transparent"
+                              type="text"
+                              x-model="email"
+                              placeholder="enter your email address"
+                              required
+                      >
+                      <img x-show="validation.email.invalid" style="display: none !important;" src="images/icon-error.svg" alt="exclamation mark icon">
+                  </label>
+                  <span x-show="validation.email.invalid" style="display: none !important;" class="italic p-2" x-text="validation.email.message"></span>
+              </div>
+
+              <button x-on:click="submit()" type="button" class="grow bg-red text-sm rounded px-4 py-3 transition ease-out duration-300 md:max-w-[180px]">
                   Contact Us
               </button>
           </form>
       </section>
-      <section class="bg-dark-blue text-white">
-          <div class="w-28">
+      <section class="bg-dark-blue text-white grid place-items-center py-12">
+          <div class="w-32">
               <svg viewbox="0 0 148 25" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M37 6.299h5.227c.746 0 1.434.155 2.062.466.629.311 1.123.735 1.484 1.27s.542 1.12.542 1.754c0 .672-.165 1.254-.495 1.746-.33.491-.762.868-1.297 1.129v.15c.697.248 1.25.643 1.661 1.185.41.541.616 1.191.616 1.95 0 .735-.196 1.385-.588 1.951a3.817 3.817 0 0 1-1.587 1.307c-.665.305-1.403.457-2.212.457H37V6.299zm5.04 5.45c.548 0 .986-.152 1.316-.457.33-.305.495-.688.495-1.148 0-.448-.159-.824-.476-1.13-.318-.304-.738-.457-1.26-.457H39.52v3.192h2.52zm.28 5.619c.61 0 1.086-.159 1.428-.476.342-.317.513-.731.513-1.241 0-.51-.174-.927-.522-1.251-.349-.324-.847-.485-1.494-.485H39.52v3.453h2.8zm12.927 2.595c-1.307 0-2.492-.308-3.556-.924a6.711 6.711 0 0 1-2.511-2.53c-.61-1.07-.915-2.246-.915-3.528 0-1.281.305-2.457.915-3.528a6.711 6.711 0 0 1 2.51-2.529C52.756 6.308 53.94 6 55.248 6c1.306 0 2.492.308 3.556.924a6.711 6.711 0 0 1 2.51 2.53c.61 1.07.915 2.246.915 3.527 0 1.282-.305 2.458-.915 3.528a6.711 6.711 0 0 1-2.51 2.53c-1.064.616-2.25.924-3.556.924zm0-2.39a4.52 4.52 0 0 0 2.258-.578 4.177 4.177 0 0 0 1.615-1.624c.392-.697.588-1.494.588-2.39 0-.896-.196-1.692-.588-2.389a4.177 4.177 0 0 0-1.615-1.624 4.52 4.52 0 0 0-2.258-.579 4.47 4.47 0 0 0-2.25.579 4.195 4.195 0 0 0-1.605 1.624c-.392.697-.588 1.493-.588 2.39 0 .895.196 1.692.588 2.389a4.195 4.195 0 0 0 1.605 1.624 4.47 4.47 0 0 0 2.25.578zm15.353 2.39c-1.307 0-2.492-.308-3.556-.924a6.711 6.711 0 0 1-2.51-2.53c-.61-1.07-.915-2.246-.915-3.528 0-1.281.305-2.457.914-3.528a6.711 6.711 0 0 1 2.511-2.529C68.108 6.308 69.294 6 70.6 6c1.307 0 2.492.308 3.556.924a6.711 6.711 0 0 1 2.51 2.53c.61 1.07.915 2.246.915 3.527 0 1.282-.305 2.458-.914 3.528a6.711 6.711 0 0 1-2.511 2.53c-1.064.616-2.25.924-3.556.924zm0-2.39a4.52 4.52 0 0 0 2.259-.578 4.177 4.177 0 0 0 1.614-1.624c.392-.697.588-1.494.588-2.39 0-.896-.196-1.692-.588-2.389a4.177 4.177 0 0 0-1.614-1.624 4.52 4.52 0 0 0-2.259-.579 4.47 4.47 0 0 0-2.25.579 4.195 4.195 0 0 0-1.605 1.624c-.392.697-.588 1.493-.588 2.39 0 .895.196 1.692.588 2.389a4.195 4.195 0 0 0 1.606 1.624 4.47 4.47 0 0 0 2.249.578zM79.83 6.3h2.52v5.73h.15l4.89-5.73h3.043v.149L85.6 11.973l5.338 7.542v.149h-3.08l-3.994-5.693-1.512 1.773v3.92h-2.52V6.299zM93.779 6h3.248l3.546 9.39h.15L104.268 6h3.267v13.365h-2.501v-6.589l.15-2.221h-.15l-3.398 8.81h-1.96l-3.416-8.81h-.149l.15 2.221v6.59h-2.483V6zm20.8 0h2.894l5.021 13.365h-2.781l-1.12-3.192h-5.115l-1.12 3.192h-2.781L114.579 6zm3.193 7.859l-1.176-3.36-.486-1.606h-.149l-.485 1.606-1.195 3.36h3.49zM124.553 6h4.872c.871 0 1.646.18 2.324.541.678.361 1.204.862 1.577 1.503.374.64.56 1.366.56 2.175 0 .858-.27 1.62-.812 2.286a4.617 4.617 0 0 1-2.044 1.447l-.018.13 3.584 5.134v.15h-2.894l-3.453-5.022h-1.176v5.021h-2.52V6zm4.853 6.03c.573 0 1.04-.175 1.4-.523.361-.349.542-.79.542-1.326 0-.51-.172-.945-.514-1.306-.342-.361-.806-.542-1.39-.542h-2.371v3.696h2.333zm7.23-6.03h2.52v5.73h.15l4.89-5.73h3.043v.15l-4.835 5.525 5.34 7.541v.15h-3.08l-3.996-5.694-1.512 1.773v3.92h-2.52V6z" fill="currentColor" fill-rule="nonzero"/><g><circle fill="#5267DF" cx="12.5" cy="12.5" r="12.5"/><path d="M9 9v10l3.54-3.44L16.078 19V9a2 2 0 0 0-2-2H11a2 2 0 0 0-2 2z" fill="#FFF"/></g></g></svg>
           </div>
-          <ol>
+          <ol class="py-12 space-y-6 text-center">
               <li><a href="#" class="uppercase hover:text-red transition ease-out duration-300">Features</a></li>
               <li><a href="#" class="uppercase hover:text-red transition ease-out duration-300">Pricing</a></li>
               <li><a href="#" class="uppercase hover:text-red transition ease-out duration-300">Contact</a></li>
           </ol>
-          <ul>
-              <li class="w-4">
+          <ul class="flex gap-6 items-center">
+              <li class="w-6">
               <a class="hover:text-red">
                   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
               </a>
               </li>
-              <li class="w-4">
+              <li class="w-6">
               <a class="hover:text-red">
                   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 20"><path fill="currentColor" fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/></svg>
               </a>
