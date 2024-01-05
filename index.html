@@ -119,7 +119,7 @@
               <div class="space-y-6 lg:max-w-md lg:mx-auto">
                   <h2 class="text-3xl text-center font-medium md:text-start">A Simple Bookmark Manager</h2>
 
-                  <p class="text-gray-blue text-center max-w-prose mx-auto md:text-start md:ml-0">
+                  <p class="text-gray-blue text-center mx-auto md:text-start">
                       A clean and simple interface to organize your favourite websites. Open a new
                       browser tab and see your sites load instantly. Try it for free.
                   </p>
@@ -163,8 +163,8 @@
               </div>
           </div>
 
-          <div x-show="tab == 'simple'" class="relative grid lg:grid-cols-12">
-              <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:pr-0 lg:col-end-6">
+          <div x-show="tab == 'simple'" class="relative grid lg:grid-cols-12 lg:gap-12">
+              <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7">
                   <div class="bg-blue rounded-r-full h-full"></div>
               </div>
               <div class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5">
@@ -173,7 +173,7 @@
               <div class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5">
                   <h3 class="text-xl font-medium">Bookmark in one click</h3>
 
-                  <p class="text-gray-blue pb-3">
+                  <p class="text-gray-blue pb-3 max-w-md lg:pr-16">
                       Organize your bookmarks however you like. Our simple drag-and-drop interface
                       gives you complete control over how you manage your favourite sites.
                   </p>
@@ -182,8 +182,8 @@
               </div>
           </div>
 
-          <div x-show="tab == 'search'" class="relative grid md:grid-cols-12">
-                 <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:pr-0 lg:col-end-6">
+          <div x-show="tab == 'search'" class="relative grid lg:grid-cols-12 lg:gap-12">
+                 <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7">
                   <div class="bg-blue rounded-r-full h-full"></div>
               </div>
               <div class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5">
@@ -192,7 +192,7 @@
               <div class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5">
                   <h3 class="text-xl font-medium">Intelligent search</h3>
 
-                  <p class="text-gray-blue pb-3">
+                  <p class="text-gray-blue pb-3 max-w-md lg:pr-16">
                     Our powerful search feature will help you find saved sites in no time at all.
                       No need to trawl through all of your bookmarks.
                   </p>
@@ -201,8 +201,8 @@
               </div>
           </div>
 
-          <div x-show="tab == 'share'" class="relative grid md:grid-cols-12">
-                 <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:pr-0 lg:col-end-6">
+          <div x-show="tab == 'share'" class="relative grid lg:grid-cols-12 lg:gap-12">
+                 <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7">
                   <div class="bg-blue rounded-r-full h-full"></div>
               </div>
               <div class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5">
@@ -211,7 +211,7 @@
               <div class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5">
                   <h3 class="text-xl font-medium">Share your bookmarks</h3>
 
-                  <p class="text-gray-blue pb-3">
+                  <p class="text-gray-blue pb-3 max-w-md lg:pr-16">
                     Easily share your bookmarks and collections with others. Create a shareable
                       link that you can send at the click of a button.
                   </p>
@@ -229,7 +229,9 @@
                   We’ve got more browsers in the pipeline. Please do let us know if you’ve
                   got a favourite you’d like us to prioritize.
               </p>
-              <div class="p-6 grid gap-6 md:grid-cols-3 lg:gap-8 lg:pt-12 lg:pb-32">
+          </div>
+          <div class="md:col-start-2 md:col-span-10 lg:col-start-3 lg:col-span-8">
+              <div class="p-6 grid gap-6 md:grid-cols-3 lg:mx-auto lg:max-w-screen-lg lg:pt-12 lg:pb-32">
                   <div class="relative shadow-lg rounded-xl">
                       <div class="relative flex flex-col">
                           <div class="grid place-items-center p-4">
