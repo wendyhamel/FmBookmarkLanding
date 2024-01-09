@@ -110,7 +110,7 @@
       </div>
   </header>
   <main class="grow space-y-12 md:space-y-24">
-      <section class="relative grid gap-12 md:mt-12 lg:grid-cols-12 lg:gap-0">
+      <section class="relative overflow-hidden grid gap-12 md:mt-12 lg:grid-cols-12 lg:gap-0">
           <div class="absolute bottom-0 row-start-1 row-span-1 bg-blue rounded-l-full w-full h-3/4 ml-16 sm:ml-24 lg:ml-0 lg:col-start-8 lg:col-span-5"></div>
           <div class="relative lg:col-start-7 lg:col-span-5">
               <img class="relative" src="images/illustration-hero.svg" alt="">
@@ -162,15 +162,42 @@
                   </ol>
               </div>
           </div>
-
-          <div x-show="tab == 'simple'" class="relative grid lg:grid-cols-12 lg:gap-12">
-              <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7">
+          <div class="overflow-hidden w-full grid">
+          <div class="relative col-start-1 row-start-1 grid lg:grid-cols-12 lg:gap-12">
+              <div
+                  x-show="tab == 'simple'"
+                  x-transition:enter="transform transition ease-in-out delay-500 duration-700"
+                  x-transition:enter-start="scale-x-0 -translate-x-3/4 opacity-40"
+                  x-transition:enter-end="scale-x-100 translate-x-0 opacity-100"
+                  x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="scale-x-100 translate-x-0 opacity-100"
+                  x-transition:leave-end="scale-x-0 -translate-x-3/4 opacity-40"
+                  class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7"
+              >
                   <div class="bg-blue rounded-r-full h-full"></div>
               </div>
-              <div class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5">
+              <div
+                  x-show="tab == 'simple'"
+                  x-transition:enter="transform origin-top-left transition ease-in-out delay-500 duration-500 sm:delay-700 sm:duration-700"
+                  x-transition:enter-start="-translate-x-5 scale-90 opacity-0"
+                  x-transition:enter-end="translate-x-0 scale-100 opacity-100"
+                  x-transition:leave="transform origin-top-left transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="translate-x-0 scale-100 opacity-100"
+                  x-transition:leave-end="-translate-x-5 scale-90 opacity-0"
+                  class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5"
+              >
                   <img class="relative ml-auto px-6" src="images/illustration-features-tab-1.svg" alt="">
               </div>
-              <div class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5">
+              <div
+                  x-show="tab == 'simple'"
+                  x-transition:enter="transform transition ease-in-out delay-500 duration-500 sm:delay-700 sm:duration-700"
+                  x-transition:enter-start="translate-x-1/4 opacity-0"
+                  x-transition:enter-end="translate-x-0 opacity-100"
+                  x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="translate-x-0 opacity-100"
+                  x-transition:leave-end="translate-x-1/4 opacity-0"
+                  class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5"
+              >
                   <h3 class="text-xl font-medium">Bookmark in one click</h3>
 
                   <p class="text-gray-blue pb-3 max-w-md lg:pr-16">
@@ -182,14 +209,41 @@
               </div>
           </div>
 
-          <div x-show="tab == 'search'" class="relative grid lg:grid-cols-12 lg:gap-12">
-                 <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7">
+          <div class="relative col-start-1 row-start-1 grid lg:grid-cols-12 lg:gap-12">
+              <div
+                  x-show="tab == 'search'"
+                  x-transition:enter="transform transition ease-in-out delay-500 duration-700"
+                  x-transition:enter-start="scale-x-0 -translate-x-3/4 opacity-40"
+                  x-transition:enter-end="scale-x-100 translate-x-0 opacity-100"
+                  x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="scale-x-100 translate-x-0 opacity-100"
+                  x-transition:leave-end="scale-x-0 -translate-x-3/4 opacity-40"
+                  class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7"
+              >
                   <div class="bg-blue rounded-r-full h-full"></div>
               </div>
-              <div class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5">
+              <div
+                  x-show="tab == 'search'"
+                  x-transition:enter="transform origin-top-left transition ease-in-out delay-500 duration-500 sm:delay-700 sm:duration-700"
+                  x-transition:enter-start="-translate-x-5 scale-90 opacity-0"
+                  x-transition:enter-end="translate-x-0 scale-100 opacity-100"
+                  x-transition:leave="transform origin-top-left transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="translate-x-0 scale-100 opacity-100"
+                  x-transition:leave-end="-translate-x-5 scale-90 opacity-0"
+                  class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5"
+              >
                   <img class="relative ml-auto px-6" src="images/illustration-features-tab-2.svg" alt="">
               </div>
-              <div class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5">
+              <div
+                  x-show="tab == 'search'"
+                  x-transition:enter="transform transition ease-in-out delay-500 duration-500 sm:delay-700 sm:duration-700"
+                  x-transition:enter-start="translate-x-1/4 opacity-0"
+                  x-transition:enter-end="translate-x-0 opacity-100"
+                  x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="translate-x-0 opacity-100"
+                  x-transition:leave-end="translate-x-1/4 opacity-0"
+                  class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5"
+              >
                   <h3 class="text-xl font-medium">Intelligent search</h3>
 
                   <p class="text-gray-blue pb-3 max-w-md lg:pr-16">
@@ -201,14 +255,41 @@
               </div>
           </div>
 
-          <div x-show="tab == 'share'" class="relative grid lg:grid-cols-12 lg:gap-12">
-                 <div class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7">
+          <div class="relative col-start-1 row-start-1 grid lg:grid-cols-12 lg:gap-12">
+              <div
+                  x-show="tab == 'share'"
+                  x-transition:enter="transform transition ease-in-out delay-500 duration-700"
+                  x-transition:enter-start="scale-x-0 -translate-x-3/4 opacity-40"
+                  x-transition:enter-end="scale-x-100 translate-x-0 opacity-100"
+                  x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="scale-x-100 translate-x-0 opacity-100"
+                  x-transition:leave-end="scale-x-0 -translate-x-3/4 opacity-40"
+                  class="absolute row-start-1 row-span-1 bottom-0 h-3/4 w-full pt-1 pr-16 sm:pr-24 lg:col-end-7"
+              >
                   <div class="bg-blue rounded-r-full h-full"></div>
               </div>
-              <div class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5">
+              <div
+                   x-show="tab == 'share'"
+                  x-transition:enter="transform origin-top-left transition ease-in-out delay-500 duration-500 sm:delay-700 sm:duration-700"
+                  x-transition:enter-start="-translate-x-5 scale-90 opacity-0"
+                  x-transition:enter-end="translate-x-0 scale-100 opacity-100"
+                  x-transition:leave="transform origin-top-left transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="translate-x-0 scale-100 opacity-100"
+                  x-transition:leave-end="-translate-x-5 scale-90 opacity-0"
+                  class="relative py-10 md:pb-16 lg:col-start-2 lg:col-span-5"
+              >
                   <img class="relative ml-auto px-6" src="images/illustration-features-tab-3.svg" alt="">
               </div>
-              <div class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5">
+              <div
+                  x-show="tab == 'share'"
+                  x-transition:enter="transform transition ease-in-out delay-500 duration-500 sm:delay-700 sm:duration-700"
+                  x-transition:enter-start="translate-x-1/4 opacity-0"
+                  x-transition:enter-end="translate-x-0 opacity-100"
+                  x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                  x-transition:leave-start="translate-x-0 opacity-100"
+                  x-transition:leave-end="translate-x-1/4 opacity-0"
+                  class="relative px-4 py-12 space-y-3 text-center lg:text-start lg:col-start-7 lg:col-span-5"
+              >
                   <h3 class="text-xl font-medium">Share your bookmarks</h3>
 
                   <p class="text-gray-blue pb-3 max-w-md lg:pr-16">
@@ -218,6 +299,7 @@
 
                   <button type="button" class="bg-blue text-white text-sm rounded px-4 py-3 border-2 border-blue hover:text-blue hover:bg-white transition ease-out duration-300">More Info</button>
               </div>
+          </div>
           </div>
       </section>
 
